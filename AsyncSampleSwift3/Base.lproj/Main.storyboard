@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AsyncSampleSwift3" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +17,53 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J7k-ID-Cbe">
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alw-SU-byE">
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <state key="normal" title="Async"/>
+                                <connections>
+                                    <action selector="touchMyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YK1-48-YNy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkA-PW-Zel">
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <state key="normal" title="ElseAction"/>
+                                <connections>
+                                    <action selector="touchEleActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lET-Qu-zY3"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eah-3E-z3C">
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="eah-3E-z3C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5tj-Td-7nb"/>
+                            <constraint firstItem="eah-3E-z3C" firstAttribute="top" secondItem="dkA-PW-Zel" secondAttribute="bottom" constant="8" id="GDc-4X-2VQ"/>
+                            <constraint firstItem="dkA-PW-Zel" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jmq-tb-HNv"/>
+                            <constraint firstItem="dkA-PW-Zel" firstAttribute="top" secondItem="alw-SU-byE" secondAttribute="bottom" constant="7.5" id="N6c-w3-gJi"/>
+                            <constraint firstItem="alw-SU-byE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PyM-40-oiu"/>
+                            <constraint firstItem="J7k-ID-Cbe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="cak-mN-7kp"/>
+                            <constraint firstAttribute="trailing" secondItem="J7k-ID-Cbe" secondAttribute="trailing" constant="16" id="ee7-vc-aSw"/>
+                            <constraint firstItem="J7k-ID-Cbe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="hRa-gI-Brd"/>
+                            <constraint firstItem="alw-SU-byE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xY2-Qe-DYe"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="elseActionLabel" destination="eah-3E-z3C" id="PLv-iH-O4h"/>
+                        <outlet property="myLabel" destination="J7k-ID-Cbe" id="9eg-XC-DWc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
         </scene>
     </scenes>
 </document>
